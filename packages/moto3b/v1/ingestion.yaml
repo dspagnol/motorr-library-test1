@@ -1,0 +1,23 @@
+schema_version: 1
+
+variables:
+  release_directory:
+    type: regex
+    template: "Moto3 ${season.code} Round ${round.code}"
+
+torrent_acquisition:
+  - id: moto3b-race-search
+    applies_to:
+      event_codes: ["06r"]
+    indexer_capabilities: ["public-sports"]
+    query_template: "moto3 ${season.code} round ${round.code} race"
+    listing_title_regex: "^Moto3.*Race.*$"
+    torrent_name_regex: "^Moto3.*${season.code}.*Round.*$"
+
+file_matchers:
+  - id: moto3b-race
+    applies_to:
+      event_codes: ["06r"]
+      source_kinds: ["torrent", "watch_directory"]
+    priority: 10
+    relative_path_regex: '^${var.release_directory}/Race\.(?:mkv|mp4)$'

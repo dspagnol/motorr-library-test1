@@ -1,0 +1,11 @@
+schema_version: 1
+topics:
+  - code: moto3b
+    name: Moto3b
+    description: Pilot topic package for first external catalog test
+    package:
+      version: 0.1.0
+      url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3b/moto3b-0.1.0.zip
+      manifest_sha256: cafdba649781f0f2bbac78c230f159e06400d5c3b26a491049589ea257aa9f8e
+    core_compatibility:
+      min: 0.0.1

@@ -1,0 +1,9 @@
+schema_version: 1
+
+topic:
+  code: moto3b
+  name: Moto3b
+  description: Pilot topic package for Moto3 schedule/import refactoring.
+
+schedule:
+  repository_override: https://example.invalid/motorr/schedule

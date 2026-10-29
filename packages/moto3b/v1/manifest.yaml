@@ -1,0 +1,17 @@
+schema_version: 1
+
+package:
+  code: moto3b
+  version: 0.1.0
+
+core_compatibility:
+  min: 0.0.1
+
+payload:
+  - kind: topic
+    path: topic.yaml
+    sha256: 17fc7d4a98b26875d799901222656e550b1bc522277fdd05b0856be1ca61f702
+
+  - kind: ingestion
+    path: ingestion.yaml
+    sha256: b203332f489107a135bb24574a34ac84257bceac1f95dd5e2c63f834537a576b
