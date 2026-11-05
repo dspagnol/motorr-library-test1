@@ -1,0 +1,207 @@
+schema_version: 1
+package:
+  code: motogp
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: motogp
+  name: MotoGP
+  description: The MotoGP World Championship is the premier class of motorcycle road
+    racing events held on road circuits sanctioned by the Fédération Internationale
+    de Motocyclisme (FIM). It is the top division of the FIM Road Racing World Championship
+    Grand Prix.
+variables:
+  watch_token:
+    type: select
+    select:
+      field: event.code
+      values:
+        01fp1: FP1
+        02p: PR
+        03fp2: FP2
+        04q1: Q1
+        05q2: Q2
+  uindex_token_2:
+    type: select
+    select:
+      field: event.code
+      values:
+        01fp1: FP1
+        02p: Practice
+        03fp2: FP2
+        06s: Sprint
+        07wu: Warm Up
+        08r: Race
+  q_num:
+    type: select
+    select:
+      field: event.code
+      values:
+        04q1: '1'
+        05q2: '2'
+  q_word:
+    type: select
+    select:
+      field: event.code
+      values:
+        04q1: one
+        05q2: two
+torrent_acquisition:
+- id: rutracker
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02p
+    - 03fp2
+    - 04q1
+    - 05q2
+    - 06s
+    - 07wu
+    - 08r
+  indexer_capabilities:
+  - rutracker
+  query_template: motogp ${season.code} ${round.code} eng
+  listing_title_regex: ^Moto Grand Prix \(MotoGP, Moto2, Moto3(?:, MotoE)?\) ${season.code}
+    .+ ${round.code} .* \[.*,.+ENG.*\]$
+  torrent_name_regex: MotoGP\.${season.code}\.Round${round.code}\..+
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02p
+    - 03fp2
+    - 04q1
+    - 05q2
+    - 06s
+    - 07wu
+    - 08r
+  indexer_capabilities:
+  - public-sports
+  query_template: motogp ${season.code} round${round.code}
+- id: uindex
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02p
+    - 03fp2
+    - 06s
+    - 07wu
+    - 08r
+  indexer_capabilities:
+  - uindex
+  query_template: motogp ${season.code} round${round.code}
+  listing_title_regex: MotoGP ${season.code} Round${round.code} .+ ${var.uindex_token_2}
+    WEB-DL .*
+  torrent_name_regex: MotoGP ${season.code} Round${round.code} .+ ${var.uindex_token_2}
+    WEB-DL .*
+file_matchers:
+- id: motomundo-watch
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02p
+    - 03fp2
+    - 04q1
+    - 05q2
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
+- id: motomundo-watch-06s
+  applies_to:
+    event_codes:
+    - 06s
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.(?:SPRINT(?:-(?:Dorna|VDPass)|)|SPRINT-Provisional|SPRINT-DAZN|SPRINT-ESPN_Brasil|SPRINT-TNT)\.(?:mp4|mkv)$'
+- id: motomundo-watch-07wu
+  applies_to:
+    event_codes:
+    - 07wu
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.(?:WarmUp|WUP)\.(?:mp4|mkv)$'
+- id: motomundo-watch-08r
+  applies_to:
+    event_codes:
+    - 08r
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.(?:RACE(?:-(?:Dorna|VDPass)|)|RACE-Provisional|RACE-DAZN|RACE-ESPN_Brasil|RACE-TNT)\.(?:mp4|mkv)$'
+- id: rutracker-torrent-01fp1
+  applies_to:
+    event_codes:
+    - 01fp1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\WF?P1(?:\W.*)?\.(?:mkv|mp4)$'
+- id: rutracker-torrent-02p
+  applies_to:
+    event_codes:
+    - 02p
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\W(?:PRA?|Practice)(?:\W.*)?\.(?:mkv|mp4)$'
+- id: rutracker-torrent-03fp2
+  applies_to:
+    event_codes:
+    - 03fp2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\WF?P2(?:\W.*)?\.(?:mkv|mp4)$'
+- id: rutracker-torrent-06s
+  applies_to:
+    event_codes:
+    - 06s
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\W(?:SPRINT|Sprint)(?:\W.*)?\.(?:mkv|mp4)$'
+- id: rutracker-torrent-07wu
+  applies_to:
+    event_codes:
+    - 07wu
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\W(?:WUP|WarmUP|WarmUp|Warm
+    Up)(?:\W.*)?\.(?:mkv|mp4)$'
+- id: rutracker-torrent-08r
+  applies_to:
+    event_codes:
+    - 08r
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\W(?:RACE|Race)(?:\W.*)?\.(?:mkv|mp4)$'
+- id: rutracker-torrent-q
+  applies_to:
+    event_codes:
+    - 04q1
+    - 05q2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. MotoGP/[0-9]{2}[a-z]?[\.\-].*\W(?:Q${var.q_num}|qualifying\.${var.q_word})(?:\W.*)?\.(?:mkv|mp4)$'
+- id: uindex-torrent
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02p
+    - 03fp2
+    - 06s
+    - 07wu
+    - 08r
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: MotoGP ${season.code} Round${round.code} .+ ${var.uindex_token_2}
+    WEB-DL .*.*/MotoGP ${season.code} Round${round.code} .+ ${var.uindex_token_2}
+    WEB-DL .*.*\.mkv

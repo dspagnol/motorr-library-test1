@@ -1,0 +1,74 @@
+schema_version: 1
+package:
+  code: motoe
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: motoe
+  name: MotoE
+  description: The FIM Enel MotoE World Championship (formerly known as the MotoE
+    World Cup) is a class of motorcycle racing that uses only electric motorcycles.
+    The series is sanctioned by the FIM and the inaugural season in 2019 was due to
+    support MotoGP at five of the European circuits.
+torrent_acquisition:
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 01fp
+    - 02p
+    - 03q1
+    - 04q2
+    - 05r1
+    - 06r2
+  indexer_capabilities:
+  - public-sports
+  query_template: motoe ${season.code} round${round.code}
+  torrent_name_regex: MotoGP\.${season.code}\.Round${round.code}\..+
+file_matchers:
+- id: torrent-query-torrent-01fp
+  applies_to:
+    event_codes:
+    - 01fp
+    - 02p
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. MotoE/[0-9]{2}[a-z]?\.ME\..+\.${season.code}\.?\.(?:1080p|720p).+\.mkv)|(?:[0-9]{2}\.
+    MotoE/[0-9]{2}[\.\-](?:MotoMundo\.)?${season.code}\.R${round.code}\..+-(?:ME\.)??(?:\.?\[RU\])?\.(?:mkv|mp4)))$
+- id: torrent-query-torrent-03q1
+  applies_to:
+    event_codes:
+    - 03q1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. MotoE/[0-9]{2}[a-z]?\.ME\..+\.${season.code}\.Q1\.(?:1080p|720p).+\.mkv)|(?:[0-9]{2}\.
+    MotoE/[0-9]{2}[\.\-](?:MotoMundo\.)?${season.code}\.R${round.code}\..+-(?:ME\.)?Q1(?:\.?\[RU\])?\.(?:mkv|mp4)))$
+- id: torrent-query-torrent-04q2
+  applies_to:
+    event_codes:
+    - 04q2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. MotoE/[0-9]{2}[a-z]?\.ME\..+\.${season.code}\.Q2\.(?:1080p|720p).+\.mkv)|(?:[0-9]{2}\.
+    MotoE/[0-9]{2}[\.\-](?:MotoMundo\.)?${season.code}\.R${round.code}\..+-(?:ME\.)?Q2(?:\.?\[RU\])?\.(?:mkv|mp4)))$
+- id: torrent-query-torrent-05r1
+  applies_to:
+    event_codes:
+    - 05r1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. MotoE/[0-9]{2}[a-z]?\.ME\..+\.${season.code}\.RACE1\.(?:1080p|720p).+\.mkv)|(?:[0-9]{2}\.
+    MotoE/[0-9]{2}[\.\-](?:MotoMundo\.)?${season.code}\.R${round.code}\..+-(?:ME\.)?Race1(?:\.?\[RU\])?\.(?:mkv|mp4)))$
+- id: torrent-query-torrent-06r2
+  applies_to:
+    event_codes:
+    - 06r2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. MotoE/[0-9]{2}[a-z]?\.ME\..+\.${season.code}\.RACE2\.(?:1080p|720p).+\.mkv)|(?:[0-9]{2}\.
+    MotoE/[0-9]{2}[\.\-](?:MotoMundo\.)?${season.code}\.R${round.code}\..+-(?:ME\.)?Race2(?:\.?\[RU\])?\.(?:mkv|mp4)))$

@@ -1,11 +1,161 @@
 schema_version: 1
 topics:
-  - code: moto3b
-    name: Moto3b
-    description: Pilot topic package for first external catalog test
-    package:
-      version: 0.1.0
-      url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3b/moto3b-0.1.0.zip
-      manifest_sha256: cafdba649781f0f2bbac78c230f159e06400d5c3b26a491049589ea257aa9f8e
-    core_compatibility:
-      min: 0.0.1
+- code: bmc
+  name: Bagger World Cup
+  description: The FIM Harley-Davidson Bagger World Cup is a class of motorcycle racing
+    that uses only Harley-Davidson Bagger motorcycles.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/bmc/v1/topic.v1.yaml
+    topic_sha256: dd01da243fa3735ddba7a9d3691cc9228fd42159c3568475a7bc0f4c0a6424fc
+  core_compatibility:
+    min: 0.0.1
+- code: f1
+  name: Formula One
+  description: 'Formula One (F1) is the highest class of worldwide racing for open-wheel
+    single-seater formula racing cars sanctioned by the Fédération Internationale
+    de l''Automobile (FIA).
+
+    Grands Prix take place in multiple countries and continents on either purpose-built
+    circuits or closed roads.'
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/f1/v1/topic.v1.yaml
+    topic_sha256: 59380c77b2adda945c452e1cd3e7f207558329de82331117fed350467e83c97d
+  core_compatibility:
+    min: 0.0.1
+- code: invictafc
+  name: Invicta FC
+  description: 'Invicta Fighting Championships, also known as Invicta FC, is an American
+
+    professional mixed martial arts (MMA) promotion dedicated to women''s mixed
+
+    martial arts that was founded in 2012 by Janet Martin and Shannon Knapp.
+
+    The promotion is currently owned by the Canadian-based Anthem Sports &
+
+    Entertainment.'
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/invictafc/v1/topic.v1.yaml
+    topic_sha256: cb4535fa9eb14b56805db3c9f89b43979585da453035af84522580ae5acecbeb
+  core_compatibility:
+    min: 0.0.1
+- code: moto2
+  name: Moto2
+  description: FIM Moto2 World Championship is the intermediate class of the Fédération
+    Internationale de Motocyclisme (FIM) Road Racing World Championship.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto2/v1/topic.v1.yaml
+    topic_sha256: 529f749b0ad9e30b1422d253cb272069461d9c07256e86b2b75d18808ffd2893
+  core_compatibility:
+    min: 0.0.1
+- code: moto3
+  name: Moto3
+  description: FIM Moto3 World Championship is the lightweight class of the Fédération
+    Internationale de Motocyclisme (FIM) Road Racing World Championship.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3/v1/topic.v1.yaml
+    topic_sha256: f5f155387b6253131facb4018eb17b3a3aa8bec1f073f52c2aa773a5ff8c92e2
+  core_compatibility:
+    min: 0.0.1
+- code: motoe
+  name: MotoE
+  description: The FIM Enel MotoE World Championship (formerly known as the MotoE
+    World Cup) is a class of motorcycle racing that uses only electric motorcycles.
+    The series is sanctioned by the FIM and the inaugural season in 2019 was due to
+    support MotoGP at five of the European circuits.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/motoe/v1/topic.v1.yaml
+    topic_sha256: 4fe74d4dc3846568f63579d4ae3c2e88c209b741263bb6c6efe80698c3a4f7b8
+  core_compatibility:
+    min: 0.0.1
+- code: motogp
+  name: MotoGP
+  description: The MotoGP World Championship is the premier class of motorcycle road
+    racing events held on road circuits sanctioned by the Fédération Internationale
+    de Motocyclisme (FIM). It is the top division of the FIM Road Racing World Championship
+    Grand Prix.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/motogp/v1/topic.v1.yaml
+    topic_sha256: 2af6977372c3daa0d44c3f2765d5e0d4b0c6cc3150abc20043a5f2250d104d53
+  core_compatibility:
+    min: 0.0.1
+- code: ufc
+  name: UFC
+  description: The Ultimate Fighting Championship (UFC) is an American mixed martial
+    arts (MMA) promotion company based in Las Vegas, Nevada.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/ufc/v1/topic.v1.yaml
+    topic_sha256: 38591d0051d8da7c2aee95d363679bda111c06bcfb1197a766555ffc30758102
+  core_compatibility:
+    min: 0.0.1
+- code: wsbk
+  name: WorldSBK
+  description: 'Superbike World Championship (also known as WorldSBK, SBK, World Superbike,
+    WSB, or WSBK) is a
+
+    silhouette road racing series based on heavily modified production sports motorcycles.'
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wsbk/v1/topic.v1.yaml
+    topic_sha256: d4d2390f747b6e46d78dec3fdbbd089ee6e40025655d42a87689af58ecda69ec
+  core_compatibility:
+    min: 0.0.1
+- code: wspb
+  name: WorldSPB
+  description: The Sportbike World Championship (or short abbreviated as WorldSPB)
+    is a motorcycle racing competition on paved surfaces, for production-based motorcycles.
+    The class replaced the Supersport 300 World Championship which ran for nine seasons
+    as the support class for the Superbike World Championship from 2017 up to 2025.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wspb/v1/topic.v1.yaml
+    topic_sha256: 23a38234846d5b862392b0d42acac1f78afabc42536d8ddff5274b11ca60784c
+  core_compatibility:
+    min: 0.0.1
+- code: wssp
+  name: WorldSSP
+  description: 'The Supersport World Championship, abbreviated to WorldSSP, is a motorcycle
+    racing competition on hard-surfaced circuits, based on mid-sized sports motorcycles.
+
+    Competition machines were originally based on production-based motorcycles with
+    600 cc to 955 cc engines, depending on the number of cylinders.
+
+    After trials in UK national series British Supersport, from 2022 the regulations
+    have changed to allow eligibility of larger-displacement engines, to reflect the
+    engine sizes being produced and encourage different manufacturers.'
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wssp/v1/topic.v1.yaml
+    topic_sha256: e89846b96a539781664f94ad8fb61c4ef53e2cdd8509c918c4de25c17d40abe6
+  core_compatibility:
+    min: 0.0.1
+- code: wssp300
+  name: WorldSSP300
+  description: 'The Supersport 300 World Championship (or short abbreviated as WorldSSP300)
+    is a motorcycle racing competition on paved surfaces, for production-based motorcycles.
+
+    Created in 2017, the championship runs as a support class to the Superbike World
+    Championship.'
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wssp300/v1/topic.v1.yaml
+    topic_sha256: 6d877d9a512843b9e2de0e651d4ed0e43a8cd231411993bc03857322f9e0652b
+  core_compatibility:
+    min: 0.0.1
+- code: wwcr
+  name: WorldWCR
+  description: The FIM Women's Circuit Racing World Championship (WorldWCR) is the
+    premier female only circuit racing series.
+  package:
+    version: 0.1.0
+    url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wwcr/v1/topic.v1.yaml
+    topic_sha256: 14b73a8a42e9f2a2a87bc19b23966c3b8c7f42af45988370b0d0b5cd36982fd4
+  core_compatibility:
+    min: 0.0.1

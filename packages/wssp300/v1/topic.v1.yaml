@@ -1,0 +1,118 @@
+schema_version: 1
+package:
+  code: wssp300
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: wssp300
+  name: WorldSSP300
+  description: 'The Supersport 300 World Championship (or short abbreviated as WorldSSP300)
+    is a motorcycle racing competition on paved surfaces, for production-based motorcycles.
+
+    Created in 2017, the championship runs as a support class to the Superbike World
+    Championship.'
+torrent_acquisition:
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 01p
+  indexer_capabilities:
+  - public-sports
+  query_template: wssp300 ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round02\..+
+- id: torrent_query-2
+  applies_to:
+    event_codes:
+    - 02s
+  indexer_capabilities:
+  - public-sports
+  query_template: wssp300 ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round03\..+
+- id: torrent_query-3
+  applies_to:
+    event_codes:
+    - 03wu1
+  indexer_capabilities:
+  - public-sports
+  query_template: wssp300 ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round05\..+
+- id: torrent_query-4
+  applies_to:
+    event_codes:
+    - 04r1
+  indexer_capabilities:
+  - public-sports
+  query_template: wssp300 ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round06\..+
+- id: torrent_query-5
+  applies_to:
+    event_codes:
+    - 05wu2
+  indexer_capabilities:
+  - public-sports
+  query_template: wssp300 ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round09\..+
+- id: torrent_query-6
+  applies_to:
+    event_codes:
+    - 06r2
+  indexer_capabilities:
+  - public-sports
+  query_template: wssp300 ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round10\..+
+file_matchers:
+- id: torrent_query-torrent-file-torrent-01p
+  applies_to:
+    event_codes:
+    - 01p
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WSSP300/[0-9]{2} - SPP300\.${season.code}\.02\..+\.Grand\.Prix\.Practice\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    WSSP300/[0-9]{2}\.MotoMundo-WSSP300\.${season.code}\.R02\..+\.FP\.mp4))$
+- id: torrent_query-torrent-file-torrent-02s
+  applies_to:
+    event_codes:
+    - 02s
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WSSP300/[0-9]{2} - SPP300\.${season.code}\.03\..+\.Grand\.Prix\.Superpole\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    WSSP300/[0-9]{2}\.MotoMundo-WSSP300\.${season.code}\.R03\..+\.SPole\.mp4))$
+- id: torrent_query-torrent-file-torrent-03wu1
+  applies_to:
+    event_codes:
+    - 03wu1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WSSP300/[0-9]{2} - SPP300\.${season.code}\.05\..+\.Grand\.Prix\.Warm(?:ing)?.Up\.(?:1|One)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    WSSP300/[0-9]{2}\.MotoMundo-WSSP300\.${season.code}\.R05\..+\.WUP1\.mp4))$
+- id: torrent_query-torrent-file-torrent-04r1
+  applies_to:
+    event_codes:
+    - 04r1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WSSP300/[0-9]{2} - SPP300\.${season.code}\.06\..+\.Grand\.Prix\.Race\.(?:1|One)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    WSSP300/[0-9]{2}\.MotoMundo-WSSP300\.${season.code}\.R06\..+\.Race1\.mp4))$
+- id: torrent_query-torrent-file-torrent-05wu2
+  applies_to:
+    event_codes:
+    - 05wu2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WSSP300/[0-9]{2} - SPP300\.${season.code}\.09\..+\.Grand\.Prix\.Warm(?:ing)?.Up\.(?:2|Two)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    WSSP300/[0-9]{2}\.MotoMundo-WSSP300\.${season.code}\.R09\..+\.WUP2\.mp4))$
+- id: torrent_query-torrent-file-torrent-06r2
+  applies_to:
+    event_codes:
+    - 06r2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WSSP300/[0-9]{2} - SPP300\.${season.code}\.10\..+\.Grand\.Prix\.Race\.(?:2|Two)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    WSSP300/[0-9]{2}\.MotoMundo-WSSP300\.${season.code}\.R10\..+\.Race2\.mp4))$

@@ -1,0 +1,129 @@
+schema_version: 1
+package:
+  code: wwcr
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: wwcr
+  name: WorldWCR
+  description: The FIM Women's Circuit Racing World Championship (WorldWCR) is the
+    premier female only circuit racing series.
+variables:
+  watch_token:
+    type: select
+    select:
+      field: event.code
+      values:
+        01fp: FP
+        02s: SPole
+torrent_acquisition:
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 01fp
+    - 02s
+    - 03wu1
+    - 04r1
+    - 05wu2
+    - 06r2
+  indexer_capabilities:
+  - public-sports
+  query_template: wwcr ${season.code} round${round.code}
+  torrent_name_regex: WSBK\.${season.code}\.Round.*\..+
+file_matchers:
+- id: import-dir-motomundo-import-file-watch-directory-selector
+  applies_to:
+    event_codes:
+    - 01fp
+    - 02s
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R.*\.WCR\.\w+\.${var.watch_token}\.(?:mp4|mkv)$'
+- id: import_dir_motomundo-import-file-watch_directory-03wu1
+  applies_to:
+    event_codes:
+    - 03wu1
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R.*\.WCR\.\w+\.WU_?1\.(?:mp4|mkv)$'
+- id: import_dir_motomundo-import-file-watch_directory-04r1
+  applies_to:
+    event_codes:
+    - 04r1
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R.*\.WCR\.\w+\.(?:RACE_|Race)1\.(?:mp4|mkv)$'
+- id: import_dir_motomundo-import-file-watch_directory-05wu2
+  applies_to:
+    event_codes:
+    - 05wu2
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R.*\.WCR\.\w+\.WUP_?2\.(?:mp4|mkv)$'
+- id: import_dir_motomundo-import-file-watch_directory-06r2
+  applies_to:
+    event_codes:
+    - 06r2
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R.*\.WCR\.\w+\.(?:RACE_|Race)2\.(?:mp4|mkv)$'
+- id: torrent_query-torrent-file-torrent-01fp
+  applies_to:
+    event_codes:
+    - 01fp
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WCR/[0-9]{2} - WCR\.${season.code}\..*\..+\.Grand\.Prix\.Practice\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    W?WCR/[0-9]{2}\.MotoMundo-WWCR\.${season.code}\.R.*\..+\.FP\.mp4))$
+- id: torrent_query-torrent-file-torrent-02s
+  applies_to:
+    event_codes:
+    - 02s
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WCR/[0-9]{2} - WCR\.${season.code}\..*\..+\.Grand\.Prix\.Superpole\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    W?WCR/[0-9]{2}\.MotoMundo-WWCR\.${season.code}\.R.*\..+\.SPole\.mp4))$
+- id: torrent_query-torrent-file-torrent-03wu1
+  applies_to:
+    event_codes:
+    - 03wu1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WCR/[0-9]{2} - WCR\.${season.code}\..*\..+\.Grand\.Prix\.Warm(?:ing)?.Up\.(?:1|One)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    W?WCR/[0-9]{2}\.MotoMundo-WWCR\.${season.code}\.R.*\..+\.WU_?1\.mp4))$
+- id: torrent_query-torrent-file-torrent-04r1
+  applies_to:
+    event_codes:
+    - 04r1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WCR/[0-9]{2} - WCR\.${season.code}\..*\..+\.Grand\.Prix\.Race.(?:1|One)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    W?WCR/[0-9]{2}\.MotoMundo-WWCR\.${season.code}\.R.*\..+\.(?:RACE_|Race)1\.mp4))$
+- id: torrent_query-torrent-file-torrent-05wu2
+  applies_to:
+    event_codes:
+    - 05wu2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WCR/[0-9]{2} - WCR\.${season.code}\..*\..+\.Grand\.Prix\.Warm(?:ing)?.Up\.(?:2|Two)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    W?WCR/[0-9]{2}\.MotoMundo-WWCR\.${season.code}\.R.*\..+\.WUP_?2\.mp4))$
+- id: torrent_query-torrent-file-torrent-06r2
+  applies_to:
+    event_codes:
+    - 06r2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?:(?:[0-9]{2}\. WCR/[0-9]{2} - WCR\.${season.code}\..*\..+\.Grand\.Prix\.Race.(?:2|Two)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.
+    W?WCR/[0-9]{2}\.MotoMundo-WWCR\.${season.code}\.R.*\..+\.(?:RACE_|Race)2\.mp4))$

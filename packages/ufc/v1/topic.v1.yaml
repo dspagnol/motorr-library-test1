@@ -1,0 +1,67 @@
+schema_version: 1
+package:
+  code: ufc
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: ufc
+  name: UFC
+  description: The Ultimate Fighting Championship (UFC) is an American mixed martial
+    arts (MMA) promotion company based in Las Vegas, Nevada.
+torrent_acquisition:
+- id: torrent_query_1
+  applies_to:
+    event_codes:
+    - 01r
+  indexer_capabilities:
+  - public-sports
+  query_template: full event eng
+  listing_title_regex: .*.*.+\/ Full Event \[[0-9]{2}\.[0-9]{2}\.[0-9]{4}, .+.*.+
+    (?:Eng|EN)\]
+  torrent_name_regex: .*.*
+- id: torrent_query_2
+  applies_to:
+    event_codes:
+    - 01r
+  indexer_capabilities:
+  - public-sports
+  query_template: prelims main card en
+  listing_title_regex: .*.*.+\/ Prelims & Main Card \[[0-9]{2}\.[0-9]{2}\.[0-9]{4},
+    .+.*.+ (?:Eng|EN)\]
+  torrent_name_regex: .*.*
+- id: torrent_query_3
+  applies_to:
+    event_codes:
+    - 01r
+  indexer_capabilities:
+  - public-sports
+  query_template: ufc ${season.code} round${round.code}
+  listing_title_regex: '{%- if round_edition.str -%} (?i)^.*.*(?:$|[ ._]+)(?:[ ._].*)?(?:[
+    ._].*(?:\b|$))? {%- else -%} \A\Z {%- endif -%}'
+  torrent_name_regex: .*.*
+file_matchers:
+- id: torrent_query_1-torrent-file-torrent-01r
+  applies_to:
+    event_codes:
+    - 01r
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: .*
+- id: torrent_query_2-torrent-file-torrent-01r
+  applies_to:
+    event_codes:
+    - 01r
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: .*(?:\W.*)?\.(?:mkv|mp4)$
+- id: torrent_query_3-torrent-file-torrent-01r
+  applies_to:
+    event_codes:
+    - 01r
+    source_kinds:
+    - torrent
+  priority: 45
+  relative_path_regex: .*

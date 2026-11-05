@@ -1,0 +1,35 @@
+schema_version: 1
+package:
+  code: f1
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: f1
+  name: Formula One
+  description: 'Formula One (F1) is the highest class of worldwide racing for open-wheel
+    single-seater formula racing cars sanctioned by the Fédération Internationale
+    de l''Automobile (FIA).
+
+    Grands Prix take place in multiple countries and continents on either purpose-built
+    circuits or closed roads.'
+torrent_acquisition:
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 01r
+  indexer_capabilities:
+  - public-sports
+  query_template: formula 1 ${season.code} Этап ${round.code} sky sports
+  listing_title_regex: (?i)Formula.*1.*${season.code}.*Этап.${round.code}.*.*
+  torrent_name_regex: (?i)F1[. ]${season.code}[. ]R${round.code}[. ].*SkyF1HD[. ].*
+file_matchers:
+- id: torrent_query-torrent-file-torrent-01r
+  applies_to:
+    event_codes:
+    - 01r
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: (?i)[0-9]+[. ]F1[. ]${season.code}[. ]R${round.code}[. ].*.*[.
+    ]SkyF1HD.*\.mkv$

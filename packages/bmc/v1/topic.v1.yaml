@@ -1,0 +1,47 @@
+schema_version: 1
+package:
+  code: bmc
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: bmc
+  name: Bagger World Cup
+  description: The FIM Harley-Davidson Bagger World Cup is a class of motorcycle racing
+    that uses only Harley-Davidson Bagger motorcycles.
+variables:
+  watch_token:
+    type: select
+    select:
+      field: event.code
+      values:
+        01fp1: FP1
+        02fp2: FP2
+        03q: QUALY
+        04r1: RACE_1
+        05r2: RACE_2
+torrent_acquisition:
+- id: bmc-default-search
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02fp2
+    - 03q
+    - 04r1
+    - 05r2
+  indexer_capabilities:
+  - public-sports
+  query_template: bmc ${season.code} round${round.code} ${event.code}
+file_matchers:
+- id: import-dir-motomundo-import-file-watch-directory-selector
+  applies_to:
+    event_codes:
+    - 01fp1
+    - 02fp2
+    - 03q
+    - 04r1
+    - 05r2
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R.*\.BAGGERS?\.\w+\.${var.watch_token}\.(?:mp4|mkv)$'

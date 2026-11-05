@@ -1,0 +1,47 @@
+schema_version: 1
+package:
+  code: invictafc
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: invictafc
+  name: Invicta FC
+  description: 'Invicta Fighting Championships, also known as Invicta FC, is an American
+
+    professional mixed martial arts (MMA) promotion dedicated to women''s mixed
+
+    martial arts that was founded in 2012 by Janet Martin and Shannon Knapp.
+
+    The promotion is currently owned by the Canadian-based Anthem Sports &
+
+    Entertainment.'
+torrent_acquisition:
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 02pc
+  indexer_capabilities:
+  - public-sports
+  query_template: invicta fc
+  listing_title_regex: Invicta.*FC.*.*.*Prelims.*.*
+  torrent_name_regex: Invicta.*FC.*.*.*Prelims.*.*.*\.mp4
+- id: torrent_query-2
+  applies_to:
+    event_codes:
+    - 03mc
+  indexer_capabilities:
+  - public-sports
+  query_template: invicta fc
+  listing_title_regex: Invicta.*FC.*.*.*(?<!Prelims).*.*
+  torrent_name_regex: Invicta.*FC.*.*.*(?<!Prelims).*.*.*\.mp4
+file_matchers:
+- id: torrent_query-torrent-file-torrent-02pc
+  applies_to:
+    event_codes:
+    - 02pc
+    - 03mc
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: .*\.(?:mkv|mp4)$

@@ -1,0 +1,297 @@
+schema_version: 1
+package:
+  code: wsbk
+  version: 0.1.0
+core_compatibility:
+  min: 0.0.1
+topic:
+  code: wsbk
+  name: WorldSBK
+  description: 'Superbike World Championship (also known as WorldSBK, SBK, World Superbike,
+    WSB, or WSBK) is a
+
+    silhouette road racing series based on heavily modified production sports motorcycles.'
+variables:
+  watch_token:
+    type: select
+    select:
+      field: event.code
+      values:
+        01p1: FP1
+        02p2: FP2
+        03p3: FP3
+        04s: SPole
+        05r1: RACE_1
+        06wu: WUP
+torrent_acquisition:
+- id: torrent_candidate_rutrackerorg
+  applies_to:
+    event_codes:
+    - 01p1
+    - 02p2
+    - 03p3
+    - 04s
+    - 05r1
+    - 06wu
+    - 07sr
+    - 08r2
+  indexer_capabilities:
+  - rutracker
+  query_template: wsbk ${season.code} ${round.code} eng
+  listing_title_regex: WSBK(?:\W|\W.*\W)${season.code}(?:\W|\W.*\W)${round.code}(?:\W|\W.*\W).*(?:\W|\W.*\W)ENG
+  torrent_name_regex: WSBK\.${season.code}\.Round${round.code}\..+
+- id: torrent_candidate_uindex
+  applies_to:
+    event_codes:
+    - 01p1
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ FP1 WEB-DL .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ FP1 WEB-DL .*
+- id: torrent_candidate_uindex-2
+  applies_to:
+    event_codes:
+    - 02p2
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ FP2 WEB-DL .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ FP2 WEB-DL .*
+- id: torrent_candidate_uindex-3
+  applies_to:
+    event_codes:
+    - 03p3
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ FP3 WEB-DL .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ FP3 WEB-DL .*
+- id: torrent_candidate_uindex-4
+  applies_to:
+    event_codes:
+    - 04s
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ Superpole WEB-DL
+    .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ Superpole WEB-DL .*
+- id: torrent_candidate_uindex-5
+  applies_to:
+    event_codes:
+    - 05r1
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ Race One WEB-DL .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ Race One WEB-DL .*
+- id: torrent_candidate_uindex-6
+  applies_to:
+    event_codes:
+    - 06wu
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ Warm Up WEB-DL .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ Warm Up WEB-DL .*
+- id: torrent_candidate_uindex-7
+  applies_to:
+    event_codes:
+    - 07sr
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ Superpole Race WEB-DL
+    .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ Superpole Race WEB-DL
+    .*
+- id: torrent_candidate_uindex-8
+  applies_to:
+    event_codes:
+    - 08r2
+  indexer_capabilities:
+  - uindex
+  query_template: wsbk ${season.code} round${round.code}
+  listing_title_regex: WSBK ${season.code} Round${round.code} .+ Race Two WEB-DL .*
+  torrent_name_regex: WSBK ${season.code} Round${round.code} .+ Race Two WEB-DL .*
+- id: torrent_query
+  applies_to:
+    event_codes:
+    - 01p1
+    - 02p2
+    - 03p3
+    - 04s
+    - 05r1
+    - 06wu
+    - 07sr
+    - 08r2
+  indexer_capabilities:
+  - public-sports
+  query_template: wsbk ${season.code} round${round.code}
+file_matchers:
+- id: import-dir-motomundo-import-file-watch-directory-selector
+  applies_to:
+    event_codes:
+    - 01p1
+    - 02p2
+    - 03p3
+    - 04s
+    - 05r1
+    - 06wu
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.SBK\.\w+\.${var.watch_token}\.(?:mp4|mkv)$'
+- id: import_dir_motomundo-import-file-watch_directory-07sr
+  applies_to:
+    event_codes:
+    - 07sr
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.SBK\.\w+\.(?:SPole|SP)[_\.]?RACE\.(?:mp4|mkv)$'
+- id: import_dir_motomundo-import-file-watch_directory-08r2
+  applies_to:
+    event_codes:
+    - 08r2
+    source_kinds:
+    - watch_directory
+  priority: 10
+  relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.SBK\.\w+\.RACE_2(?:-Provisional)?\.(?:mp4|mkv)$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-01p1
+  applies_to:
+    event_codes:
+    - 01p1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Practice\.(?:1|One)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.FP1\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-02p2
+  applies_to:
+    event_codes:
+    - 02p2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Practice\.(?:2|Two)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.FP2\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-03p3
+  applies_to:
+    event_codes:
+    - 03p3
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Practice\.(?:3|Three)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.FP3\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-04s
+  applies_to:
+    event_codes:
+    - 04s
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Superpole\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.SPole\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-05r1
+  applies_to:
+    event_codes:
+    - 05r1
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Race\.(?:1|One)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.Race1\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-06wu
+  applies_to:
+    event_codes:
+    - 06wu
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Warm(?:ing)?.Up\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.WUP\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-07sr
+  applies_to:
+    event_codes:
+    - 07sr
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Superpole\.Race\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.SPRace\.mp4))$'
+- id: torrent_candidate_rutrackerorg-dictionary-file-torrent-08r2
+  applies_to:
+    event_codes:
+    - 08r2
+    source_kinds:
+    - torrent
+  priority: 50
+  relative_path_regex: '[0-9]{2}\. W?SBK/(?:(?:[0-9]{2} - SBK\.${season.code}\.${round.code}\..+\.Grand\.Prix\.Race\.(?:2|Two)\.(?:ZXX.|ENGLISH.|MULTi.)+(?:1080p|720p)\..+.(?:mkv|mp4))|(?:[0-9]{2}\.MotoMundo-WSBK\.${season.code}\.R${round.code}\..+\.Race2\.mp4))$'
+- id: torrent_candidate_uindex-dictionary-file-torrent-01p1
+  applies_to:
+    event_codes:
+    - 01p1
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ FP1 WEB-DL .*.*/WSBK
+    ${season.code} Round${round.code} .+ FP1 WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-02p2
+  applies_to:
+    event_codes:
+    - 02p2
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ FP2 WEB-DL .*.*/WSBK
+    ${season.code} Round${round.code} .+ FP2 WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-03p3
+  applies_to:
+    event_codes:
+    - 03p3
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ FP3 WEB-DL .*.*/WSBK
+    ${season.code} Round${round.code} .+ FP3 WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-04s
+  applies_to:
+    event_codes:
+    - 04s
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ Superpole WEB-DL
+    .*.*/WSBK ${season.code} Round${round.code} .+ Superpole WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-05r1
+  applies_to:
+    event_codes:
+    - 05r1
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ Race One WEB-DL .*.*/WSBK
+    ${season.code} Round${round.code} .+ Race One WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-06wu
+  applies_to:
+    event_codes:
+    - 06wu
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ Warm Up WEB-DL .*.*/WSBK
+    ${season.code} Round${round.code} .+ Warm Up WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-07sr
+  applies_to:
+    event_codes:
+    - 07sr
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ Superpole Race WEB-DL
+    .*.*/WSBK ${season.code} Round${round.code} .+ Superpole Race WEB-DL .*.*\.mkv
+- id: torrent_candidate_uindex-dictionary-file-torrent-08r2
+  applies_to:
+    event_codes:
+    - 08r2
+    source_kinds:
+    - torrent
+  priority: 40
+  relative_path_regex: WSBK ${season.code} Round${round.code} .+ Race Two WEB-DL .*.*/WSBK
+    ${season.code} Round${round.code} .+ Race Two WEB-DL .*.*\.mkv
