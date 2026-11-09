@@ -16,6 +16,9 @@ topic:
     The promotion is currently owned by the Canadian-based Anthem Sports &
 
     Entertainment.'
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/invictafc
+
 torrent_acquisition:
 - id: torrent_query
   applies_to:

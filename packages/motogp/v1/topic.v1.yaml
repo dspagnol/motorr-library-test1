@@ -47,6 +47,9 @@ variables:
       values:
         04q1: one
         05q2: two
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/motogp
+
 torrent_acquisition:
 - id: rutracker
   applies_to:

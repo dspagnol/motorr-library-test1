@@ -9,6 +9,9 @@ topic:
   name: UFC
   description: The Ultimate Fighting Championship (UFC) is an American mixed martial
     arts (MMA) promotion company based in Las Vegas, Nevada.
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/ufc
+
 torrent_acquisition:
 - id: torrent_query_1
   applies_to:

@@ -11,6 +11,9 @@ topic:
     World Cup) is a class of motorcycle racing that uses only electric motorcycles.
     The series is sanctioned by the FIM and the inaugural season in 2019 was due to
     support MotoGP at five of the European circuits.
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/motoe
+
 torrent_acquisition:
 - id: torrent_query
   applies_to:

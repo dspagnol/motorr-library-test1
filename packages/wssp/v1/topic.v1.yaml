@@ -26,6 +26,9 @@ variables:
         02s: SPole
         04r1: RACE_1
         06r2: RACE_2
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/wssp
+
 torrent_acquisition:
 - id: torrent_query
   applies_to:

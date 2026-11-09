@@ -13,6 +13,9 @@ topic:
 
     Grands Prix take place in multiple countries and continents on either purpose-built
     circuits or closed roads.'
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/f1
+
 torrent_acquisition:
 - id: torrent_query
   applies_to:

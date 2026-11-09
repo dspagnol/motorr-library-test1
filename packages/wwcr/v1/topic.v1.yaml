@@ -17,6 +17,9 @@ variables:
       values:
         01fp: FP
         02s: SPole
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/wwcr
+
 torrent_acquisition:
 - id: torrent_query
   applies_to:

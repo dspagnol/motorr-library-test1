@@ -12,6 +12,9 @@ topic:
 
     Created in 2017, the championship runs as a support class to the Superbike World
     Championship.'
+schedule:
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/wssp300
+
 torrent_acquisition:
 - id: torrent_query
   applies_to:
