@@ -58,7 +58,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3/v1/topic.v1.yaml
-    topic_sha256: 10b8fdd7673f62622d078a5fe4d5ce265ccf9eccf98b13fc3ca94f0c46e1cf13
+    topic_sha256: 7570be12ce1602ac2f3dfdb42289a6603d7e9d171a67f4a68dd0aade68272f6e
   core_compatibility:
     min: 0.0.1
 - code: motoe
