@@ -1,98 +1,136 @@
+%YAML 1.2
 ---
 schema_version: 1
 package:
-  code: "motogp"
-  version: "0.1.0"
+  code: motogp
+  version: 0.1.0
 core_compatibility:
-  min: "0.0.1"
+  min: 0.0.1
 topic:
-  code: "motogp"
-  name: "MotoGP"
-  description: "The MotoGP World Championship is the premier class of motorcycle road racing events held on road circuits sanctioned by the Fédération Internationale de Motocyclisme (FIM). It is the top division of the FIM Road Racing World Championship Grand Prix."
+  code: motogp
+  name: MotoGP
+  description: The MotoGP World Championship is the premier class of motorcycle road racing events held on road circuits sanctioned
+    by the Fédération Internationale de Motocyclisme (FIM). It is the top division of the FIM Road Racing World Championship
+    Grand Prix.
 variables:
   watch_token:
-    type: "select"
+    type: select
     select:
-      field: "event.code"
+      field: event.code
       values:
-        01fp1: "FP1"
-        02p: "PR"
-        03fp2: "FP2"
-        04q1: "Q1"
-        05q2: "Q2"
-        06s: "SPRINT"
-        07wu: "WUP"
-        08r: "RACE"
+        01fp1: FP1
+        02p: PR
+        03fp2: FP2
+        04q1: Q1
+        05q2: Q2
+        06s: SPRINT
+        07wu: WUP
+        08r: RACE
 schedule:
-  schedule_url: "https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/motogp"
-
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/motogp
 torrent_acquisition:
-- id: "public_sports"
-  applies_to:
-    event_codes:
-    - "01fp1"
-    - "02p"
-    - "03fp2"
-    - "04q1"
-    - "05q2"
-    - "06s"
-    - "07wu"
-    - "08r"
-  indexer_capabilities:
-  - "public-sports"
-  query_template: "motogp ${season.code} round${round.code}"
+  - id: public_sports
+    applies_to:
+      event_codes:
+        - 01fp1
+        - 02p
+        - 03fp2
+        - 04q1
+        - 05q2
+        - 06s
+        - 07wu
+        - 08r
+    indexer_capabilities:
+      - public-sports
+    query_template: motogp ${season.code} round${round.code}
 file_matchers:
-- id: "motomundo-watch"
-  applies_to:
-    event_codes:
-    - "01fp1"
-    - "02p"
-    - "03fp2"
-    - "04q1"
-    - "05q2"
-    source_kinds:
-    - "watch_directory"
-  priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.${var.watch_token}\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-q-broadcast"
-  applies_to:
-    event_codes:
-    - "04q1"
-    - "05q2"
-    source_kinds:
-    - "watch_directory"
-  priority: 11
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.QUALY(?:-(?:TNT|DAZN|VDPass))?\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-06s"
-  applies_to:
-    event_codes:
-    - "06s"
-    source_kinds:
-    - "watch_directory"
-  priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.SPRINT(?:-(?:Dorna|VDPass|TNT|DAZN))?\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-07wu"
-  applies_to:
-    event_codes:
-    - "07wu"
-    source_kinds:
-    - "watch_directory"
-  priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.(?:WARMUP|WUP)(?:-(?:Dorna|VDPass))?\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-08r"
-  applies_to:
-    event_codes:
-    - "08r"
-    source_kinds:
-    - "watch_directory"
-  priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.RACE(?:-(?:Dorna|VDPass|TNT|DAZN))?\\.(?:mp4|mkv)$"
-- id: "polsat-torrent-08r"
-  applies_to:
-    event_codes:
-    - "08r"
-    source_kinds:
-    - "torrent"
-  priority: 50
-  relative_path_regex: "MotoGP\\.${season.code}\\.Round${round.code}\\..+\\.Race\\.Polsat\\..+\\.(?:mkv|mp4)$"
+  - id: motomundo-watch
+    applies_to:
+      event_codes:
+        - 01fp1
+        - 02p
+        - 03fp2
+        - 04q1
+        - 05q2
+      source_kinds:
+        - watch_directory
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
+  - id: motomundo-watch-q-broadcast
+    applies_to:
+      event_codes:
+        - 04q1
+        - 05q2
+      source_kinds:
+        - watch_directory
+    priority: 11
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.QUALY(?:-(?:TNT|DAZN|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-06s
+    applies_to:
+      event_codes:
+        - 06s
+      source_kinds:
+        - watch_directory
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.SPRINT(?:-(?:Dorna|VDPass|TNT|DAZN))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-07wu
+    applies_to:
+      event_codes:
+        - 07wu
+      source_kinds:
+        - watch_directory
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.(?:WARMUP|WUP)(?:-(?:Dorna|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-08r
+    applies_to:
+      event_codes:
+        - 08r
+      source_kinds:
+        - watch_directory
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.RACE(?:-(?:Dorna|VDPass|TNT|DAZN))?\.(?:mp4|mkv)$'
+  - id: polsat-torrent-08r
+    applies_to:
+      event_codes:
+        - 08r
+      source_kinds:
+        - torrent
+    priority: 50
+    relative_path_regex: MotoGP\.${season.code}\.Round${round.code}\..+\.Race\.Polsat\..+\.(?:mkv|mp4)$
+watch_directory_acquisition:
+  - id: motomundo-watch
+    applies_to:
+      event_codes:
+        - 01fp1
+        - 02p
+        - 03fp2
+        - 04q1
+        - 05q2
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
+  - id: motomundo-watch-q-broadcast
+    applies_to:
+      event_codes:
+        - 04q1
+        - 05q2
+    priority: 11
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.QUALY(?:-(?:TNT|DAZN|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-06s
+    applies_to:
+      event_codes:
+        - 06s
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.SPRINT(?:-(?:Dorna|VDPass|TNT|DAZN))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-07wu
+    applies_to:
+      event_codes:
+        - 07wu
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.(?:WARMUP|WUP)(?:-(?:Dorna|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-08r
+    applies_to:
+      event_codes:
+        - 08r
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.RACE(?:-(?:Dorna|VDPass|TNT|DAZN))?\.(?:mp4|mkv)$'
 ...

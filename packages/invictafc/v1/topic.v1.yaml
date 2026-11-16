@@ -1,3 +1,5 @@
+%YAML 1.2
+---
 schema_version: 1
 package:
   code: invictafc
@@ -18,33 +20,33 @@ topic:
     Entertainment.'
 schedule:
   schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/invictafc
-
 torrent_acquisition:
-- id: torrent_query
-  applies_to:
-    event_codes:
-    - 02pc
-  indexer_capabilities:
-  - public-sports
-  query_template: invicta fc
-  listing_title_regex: Invicta.*FC.*.*.*Prelims.*.*
-  torrent_name_regex: Invicta.*FC.*.*.*Prelims.*.*.*\.mp4
-- id: torrent_query-2
-  applies_to:
-    event_codes:
-    - 03mc
-  indexer_capabilities:
-  - public-sports
-  query_template: invicta fc
-  listing_title_regex: Invicta.*FC.*.*.*(?<!Prelims).*.*
-  torrent_name_regex: Invicta.*FC.*.*.*(?<!Prelims).*.*.*\.mp4
+  - id: torrent_query
+    applies_to:
+      event_codes:
+        - 02pc
+    indexer_capabilities:
+      - public-sports
+    query_template: invicta fc
+    listing_title_regex: Invicta.*FC.*.*.*Prelims.*.*
+    torrent_name_regex: Invicta.*FC.*.*.*Prelims.*.*.*\.mp4
+  - id: torrent_query-2
+    applies_to:
+      event_codes:
+        - 03mc
+    indexer_capabilities:
+      - public-sports
+    query_template: invicta fc
+    listing_title_regex: Invicta.*FC.*.*.*(?<!Prelims).*.*
+    torrent_name_regex: Invicta.*FC.*.*.*(?<!Prelims).*.*.*\.mp4
 file_matchers:
-- id: torrent_query-torrent-file-torrent-02pc
-  applies_to:
-    event_codes:
-    - 02pc
-    - 03mc
-    source_kinds:
-    - torrent
-  priority: 50
-  relative_path_regex: .*\.(?:mkv|mp4)$
+  - id: torrent_query-torrent-file-torrent-02pc
+    applies_to:
+      event_codes:
+        - 02pc
+        - 03mc
+      source_kinds:
+        - torrent
+    priority: 50
+    relative_path_regex: .*\.(?:mkv|mp4)$
+...

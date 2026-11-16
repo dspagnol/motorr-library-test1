@@ -1,77 +1,102 @@
+%YAML 1.2
 ---
 schema_version: 1
 package:
-  code: "moto3"
-  version: "0.1.0"
+  code: moto3
+  version: 0.1.0
 core_compatibility:
-  min: "0.0.1"
+  min: 0.0.1
 topic:
-  code: "moto3"
-  name: "Moto3"
-  description: "FIM Moto3 World Championship is the lightweight class of the Fédération Internationale de Motocyclisme (FIM) Road Racing World Championship."
+  code: moto3
+  name: Moto3
+  description: FIM Moto3 World Championship is the lightweight class of the Fédération Internationale de Motocyclisme (FIM)
+    Road Racing World Championship.
 variables:
   watch_token:
-    type: "select"
+    type: select
     select:
-      field: "event.code"
+      field: event.code
       values:
-        01fp1: "FP1"
-        02p: "PR"
-        03fp2: "FP2"
-        04q1: "Q1"
-        05q2: "Q2"
+        01fp1: FP1
+        02p: PR
+        03fp2: FP2
+        04q1: Q1
+        05q2: Q2
 schedule:
-  schedule_url: "https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/moto3"
-
+  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/moto3
 torrent_acquisition:
-- id: "public_sports"
-  applies_to:
-    event_codes:
-    - "01fp1"
-    - "02p"
-    - "03fp2"
-    - "04q1"
-    - "05q2"
-    - "06r"
-  indexer_capabilities:
-  - "public-sports"
-  query_template: "moto3 ${season.code} round${round.code}"
+  - id: public_sports
+    applies_to:
+      event_codes:
+        - 01fp1
+        - 02p
+        - 03fp2
+        - 04q1
+        - 05q2
+        - 06r
+    indexer_capabilities:
+      - public-sports
+    query_template: moto3 ${season.code} round${round.code}
 file_matchers:
-- id: "motomundo-watch"
-  applies_to:
-    event_codes:
-    - "01fp1"
-    - "02p"
-    - "03fp2"
-    - "04q1"
-    - "05q2"
-    source_kinds:
-    - "watch_directory"
-  priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.M3\\.[^\\.]+\\.${var.watch_token}\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-q-broadcast"
-  applies_to:
-    event_codes:
-    - "04q1"
-    - "05q2"
-    source_kinds:
-    - "watch_directory"
-  priority: 11
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.M3\\.[^\\.]+\\.QUALY(?:-(?:TNT|DAZN|VDPass))?\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-06r"
-  applies_to:
-    event_codes:
-    - "06r"
-    source_kinds:
-    - "watch_directory"
-  priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.M3\\.[^\\.]+\\.RACE(?:-(?:Dorna|VDPass)|)\\.(?:mp4|mkv)$"
-- id: "polsat-torrent-06r"
-  applies_to:
-    event_codes:
-    - "06r"
-    source_kinds:
-    - "torrent"
-  priority: 45
-  relative_path_regex: "Moto3\\.${season.code}\\.Round${round.code}\\..+\\.Race\\.Polsat\\..+\\.(?:mkv|mp4)$"
+  - id: motomundo-watch
+    applies_to:
+      event_codes:
+        - 01fp1
+        - 02p
+        - 03fp2
+        - 04q1
+        - 05q2
+      source_kinds:
+        - watch_directory
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M3\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
+  - id: motomundo-watch-q-broadcast
+    applies_to:
+      event_codes:
+        - 04q1
+        - 05q2
+      source_kinds:
+        - watch_directory
+    priority: 11
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M3\.[^\.]+\.QUALY(?:-(?:TNT|DAZN|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-06r
+    applies_to:
+      event_codes:
+        - 06r
+      source_kinds:
+        - watch_directory
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M3\.[^\.]+\.RACE(?:-(?:Dorna|VDPass)|)\.(?:mp4|mkv)$'
+  - id: polsat-torrent-06r
+    applies_to:
+      event_codes:
+        - 06r
+      source_kinds:
+        - torrent
+    priority: 45
+    relative_path_regex: Moto3\.${season.code}\.Round${round.code}\..+\.Race\.Polsat\..+\.(?:mkv|mp4)$
+watch_directory_acquisition:
+  - id: motomundo-watch
+    applies_to:
+      event_codes:
+        - 01fp1
+        - 02p
+        - 03fp2
+        - 04q1
+        - 05q2
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M3\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
+  - id: motomundo-watch-q-broadcast
+    applies_to:
+      event_codes:
+        - 04q1
+        - 05q2
+    priority: 11
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M3\.[^\.]+\.QUALY(?:-(?:TNT|DAZN|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-06r
+    applies_to:
+      event_codes:
+        - 06r
+    priority: 10
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M3\.[^\.]+\.RACE(?:-(?:Dorna|VDPass)|)\.(?:mp4|mkv)$'
 ...

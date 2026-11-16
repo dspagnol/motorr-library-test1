@@ -7,7 +7,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/bmc/v1/topic.v1.yaml
-    topic_sha256: ba05e759fbc64971f1c3ba05091cdcc0a45e7675ca9558d9fbbcf17771edcbb9
+    topic_sha256: b13c033da5f661f21ff38583d5abc09e35b9bc367b9524e43c349981240191f0
   core_compatibility:
     min: 0.0.1
 - code: f1
@@ -21,7 +21,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/f1/v1/topic.v1.yaml
-    topic_sha256: 6d2f46f20f854b4455ba60a0e49be4dbe861109a5ac44963449fbb74971f19d0
+    topic_sha256: d8cfbd3b1f60699cb5d5f92cc0559c317b5c3fd314582481fefd4e72d594f2f2
   core_compatibility:
     min: 0.0.1
 - code: invictafc
@@ -38,7 +38,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/invictafc/v1/topic.v1.yaml
-    topic_sha256: e95d62115f1bb11474135d1b7c1233ec6492c206bd81147ce388e11519debaea
+    topic_sha256: bc91890966eb4af349a6d7a97d368f86c49666c1f35e9fb4a9086d1ba178b5c1
   core_compatibility:
     min: 0.0.1
 - code: moto2
@@ -48,7 +48,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto2/v1/topic.v1.yaml
-    topic_sha256: 4e2afc983fd5c66fbfc5aa145294c9e9b16d16e09663c2543b532d4d659715c0
+    topic_sha256: 40aae3dd883cbe99e364d230c9fa8522e7979900fd509e8331cffddad28871cb
   core_compatibility:
     min: 0.0.1
 - code: moto3
@@ -58,7 +58,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3/v1/topic.v1.yaml
-    topic_sha256: 5eeb1739255dec7081e976cb8c3885a55804e25508d23ff467cd435247dac0d8
+    topic_sha256: 2631c4169bda184b2578d397d33075781cd7dcc5331048fa729b6f9c5e8d955d
   core_compatibility:
     min: 0.0.1
 - code: motoe
@@ -70,7 +70,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/motoe/v1/topic.v1.yaml
-    topic_sha256: 9d34ce1b338c6081543ac52865bd2908eb34cb0f80bf224cd8d0b65cf0bec60a
+    topic_sha256: 9fd51d8352d727e23f077839c2c03e830963f326cffd3b20e7dba7225b095c15
   core_compatibility:
     min: 0.0.1
 - code: motogp
@@ -82,7 +82,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/motogp/v1/topic.v1.yaml
-    topic_sha256: eb0fcff4d1d3fc7ff4352a2d7cb1319e6a8c39f7ece44f7322b867f7f4878089
+    topic_sha256: dcd2a35e18212e3bfe61d5052e3140b3443bbc6a4c710881e9f22e5f54d900e7
   core_compatibility:
     min: 0.0.1
 - code: ufc
@@ -92,7 +92,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/ufc/v1/topic.v1.yaml
-    topic_sha256: ffa84a1627b0b9e150f7c67124a1279f8c6870fbcd36e67cc82fc4d787370932
+    topic_sha256: 184e5216bc0cb493ed647d2baed4e3ea5627c327a7109103a0490b55098c7dd8
   core_compatibility:
     min: 0.0.1
 - code: wsbk
@@ -104,7 +104,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wsbk/v1/topic.v1.yaml
-    topic_sha256: 2c254516b93a69716f83e9ec546e1c7ce7070487128375c792a55c5d3b929884
+    topic_sha256: a735c4cecd63b7547f0735998bc591366e119f67219ca5d32806b5afa57e8365
   core_compatibility:
     min: 0.0.1
 - code: wspb
@@ -116,7 +116,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wspb/v1/topic.v1.yaml
-    topic_sha256: 5e5010b73b39d0da05d51b07b746cf084639cead24c23a0cb4fdba63dd60a4ad
+    topic_sha256: 7d1963c1c7fcd27e888c652e41de222aa713a8d2fc935283b43890adbb6a89ff
   core_compatibility:
     min: 0.0.1
 - code: wssp
@@ -133,7 +133,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wssp/v1/topic.v1.yaml
-    topic_sha256: c4e6cedad4eb92b6b7829434145d02329ae35cf1530a46f0eeb895fc8a1a29e1
+    topic_sha256: 1c43bbfaae298cf09338402347260050e2c8a322fc0519a4609fac5ef6b6e567
   core_compatibility:
     min: 0.0.1
 - code: wssp300
@@ -146,7 +146,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wssp300/v1/topic.v1.yaml
-    topic_sha256: b78370063ef1142dad8c6debc485d8f45c63b118d222f61b7e31c9b28f0815a6
+    topic_sha256: b73fcfa9489159f8343f2982d26212ea3d882a71d45e3f168978129f342958bf
   core_compatibility:
     min: 0.0.1
 - code: wwcr
@@ -156,6 +156,6 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/wwcr/v1/topic.v1.yaml
-    topic_sha256: 68a10e7ceaac1eb83d35bc52c080c93cf68f892e5eea294e5624a03bcf4550bc
+    topic_sha256: 76ae886d846ad7edda03efb268f5d7d7713863cf8ace8926bbc5e10c7b149410
   core_compatibility:
     min: 0.0.1
