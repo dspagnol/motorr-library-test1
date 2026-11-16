@@ -2,47 +2,58 @@
 ---
 schema_version: 1
 package:
-  code: f1
-  version: 0.1.0
+  code: "f1"
+  version: "0.1.0"
 core_compatibility:
-  min: 0.0.1
+  min: "0.0.1"
 topic:
-  code: f1
-  name: Formula One
-  description: 'Formula One (F1) is the highest class of worldwide racing for open-wheel single-seater formula racing cars
-    sanctioned by the Fédération Internationale de l''Automobile (FIA).
-
-    Grands Prix take place in multiple countries and continents on either purpose-built circuits or closed roads.'
+  code: "f1"
+  name: "Formula One"
+  description: "Formula One (F1) is the highest class of worldwide racing for open-wheel single-seater formula racing cars sanctioned by the Fédération Internationale de l'Automobile (FIA).\nGrands Prix take place in multiple countries and continents on either purpose-built circuits or closed roads."
 schedule:
-  schedule_url: https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/f1
+  schedule_url: "https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/f1"
+variables:
+  session_token:
+    type: "select"
+    select:
+      field: "event.code"
+      values:
+        01p1: "Practice.One"
+        02p2: "Practice.Two"
+        03p3: "Practice.Three"
+        04q: "Qualifying"
+        05r: "Race"
+        01p: "Practice"
+        02sq: "Sprint.Qualifying"
+        03sr: "Sprint.Race"
 torrent_acquisition:
-  - id: f1-round-search
+  - id: "f1-round-search"
     applies_to:
       event_codes:
-        - 01p1
-        - 02p2
-        - 03p3
-        - 04q
-        - 05r
-        - 01p
-        - 02sq
-        - 03sr
+        - "01p1"
+        - "02p2"
+        - "03p3"
+        - "04q"
+        - "05r"
+        - "01p"
+        - "02sq"
+        - "03sr"
     indexer_capabilities:
-      - public-sports
-    query_template: formula 1 ${season.code} этап ${round.code} sky sports 1080p
-    listing_title_regex: ^F1\.${season.code}\.R${round.code}\..*\.SkyF1HD\.1080P.*$
+      - "public-sports"
+    query_template: "formula 1 ${season.code} этап ${round.code} sky sports 1080p"
+    listing_title_regex: "(?i)Formula.*1.*${season.code}.*Этап.${round.code}.*1080p"
 file_matchers:
-  - id: f1-session-video
+  - id: "f1-session-video"
     applies_to:
       event_codes:
-        - 01p1
-        - 02p2
-        - 03p3
-        - 04q
-        - 05r
+        - "01p1"
+        - "02p2"
+        - "03p3"
+        - "04q"
+        - "05r"
       source_kinds:
-        - torrent
-        - watch_directory
+        - "torrent"
+        - "watch_directory"
     priority: 10
-    relative_path_regex: ^F1\.${season.code}\.R${round.code}\..*\.SkyF1HD\.1080P/(?:\d+\.)?F1\.${season.code}\.R${round.code}\..*\.SkyF1HD\.1080P\.(?:mkv|mp4)$
+    relative_path_regex: "^F1\\.${season.code}\\.R${round.code}\\..*\\.SkyF1HD\\.1080P/(?:\\d+\\.)F1\\.${season.code}\\.R${round.code}\\..*\\.Grand\\.Prix\\.${var.session_token}\\.SkyF1HD.1080P\\.(?:mkv|mp4)$"
 ...
