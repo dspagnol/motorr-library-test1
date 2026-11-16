@@ -82,7 +82,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/motogp/v1/topic.v1.yaml
-    topic_sha256: 0375527f9201ece444099592de52721ca5038c2f9b2681b28603ba0bdc0f33ad
+    topic_sha256: eb0fcff4d1d3fc7ff4352a2d7cb1319e6a8c39f7ece44f7322b867f7f4878089
   core_compatibility:
     min: 0.0.1
 - code: ufc

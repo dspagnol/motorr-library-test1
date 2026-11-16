@@ -20,6 +20,9 @@ variables:
         03fp2: "FP2"
         04q1: "Q1"
         05q2: "Q2"
+        06s: "SPRINT"
+        07wu: "WUP"
+        08r: "RACE"
 schedule:
   schedule_url: "https://raw.githubusercontent.com/dspagnol/motorr-schedule-test1/main/motogp"
 
@@ -32,7 +35,9 @@ torrent_acquisition:
     - "03fp2"
     - "04q1"
     - "05q2"
-    - "06r"
+    - "06s"
+    - "07wu"
+    - "08r"
   indexer_capabilities:
   - "public-sports"
   query_template: "motogp ${season.code} round${round.code}"
@@ -58,18 +63,34 @@ file_matchers:
     - "watch_directory"
   priority: 11
   relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.QUALY(?:-(?:TNT|DAZN|VDPass))?\\.(?:mp4|mkv)$"
-- id: "motomundo-watch-06r"
+- id: "motomundo-watch-06s"
   applies_to:
     event_codes:
-    - "06r"
+    - "06s"
     source_kinds:
     - "watch_directory"
   priority: 10
-  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.RACE(?:-(?:Dorna|VDPass)|)\\.(?:mp4|mkv)$"
-- id: "polsat-torrent-06r"
+  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.SPRINT(?:-(?:Dorna|VDPass|TNT|DAZN))?\\.(?:mp4|mkv)$"
+- id: "motomundo-watch-07wu"
   applies_to:
     event_codes:
-    - "06r"
+    - "07wu"
+    source_kinds:
+    - "watch_directory"
+  priority: 10
+  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.(?:WARMUP|WUP)(?:-(?:Dorna|VDPass))?\\.(?:mp4|mkv)$"
+- id: "motomundo-watch-08r"
+  applies_to:
+    event_codes:
+    - "08r"
+    source_kinds:
+    - "watch_directory"
+  priority: 10
+  relative_path_regex: "[0-9]+\\.MotoMundo\\.net\\.${season.code}\\.R${round.code}\\.MGP\\.[^\\.]+\\.RACE(?:-(?:Dorna|VDPass|TNT|DAZN))?\\.(?:mp4|mkv)$"
+- id: "polsat-torrent-08r"
+  applies_to:
+    event_codes:
+    - "08r"
     source_kinds:
     - "torrent"
   priority: 50
