@@ -92,7 +92,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/ufc/v1/topic.v1.yaml
-    topic_sha256: 856b80c9a042d99e1b3773d4fdc948806707c4ab25ab56354065ab06ba50c102
+    topic_sha256: a607e722aeeb9551247f6339d20000c4b70d232960bda27cbd739113bc7245ba
   core_compatibility:
     min: 0.0.1
 - code: wsbk
