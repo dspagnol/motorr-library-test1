@@ -51,6 +51,9 @@ file_matchers:
         - "03p3"
         - "04q"
         - "05r"
+        - "01p"
+        - "02sq"
+        - "03sr"
       source_kinds:
         - "torrent"
         - "watch_directory"
