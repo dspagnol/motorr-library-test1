@@ -25,7 +25,7 @@ variables:
         05r: "Race"
         01p: "Practice"
         02sq: "Sprint.Qualifying"
-        03sr: "Sprint.Race"
+        03sr: "Sprint"
 torrent_acquisition:
   - id: "f1-round-search"
     applies_to:
