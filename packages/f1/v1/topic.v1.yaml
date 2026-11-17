@@ -23,7 +23,7 @@ variables:
         03p3: "Free.Practice.Three"
         04q: "Qualifying"
         05r: "Race"
-        01p: "Practice"
+        01p: "(?:\\.)?Practice"
         02sq: "Sprint.Qualifying"
         03sr: "Sprint"
 torrent_acquisition:
