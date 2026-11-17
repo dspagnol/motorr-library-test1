@@ -18,9 +18,9 @@ variables:
     select:
       field: "event.code"
       values:
-        01p1: "Practice.One"
-        02p2: "Practice.Two"
-        03p3: "Practice.Three"
+        01p1: "Free.Practice.One"
+        02p2: "Free.Practice.Two"
+        03p3: "Free.Practice.Three"
         04q: "Qualifying"
         05r: "Race"
         01p: "Practice"

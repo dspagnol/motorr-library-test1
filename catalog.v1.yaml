@@ -21,7 +21,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/f1/v1/topic.v1.yaml
-    topic_sha256: 85986355f6b44cb0e98f4f4e411bd7dc62c06ce0048c9632ee0352b4c699a06a
+    topic_sha256: 9753b13c8963112e25b5f462cef11bb0784a0fbdec1499493456a1886e4d5291
   core_compatibility:
     min: 0.0.1
 - code: invictafc
