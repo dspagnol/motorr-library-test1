@@ -52,13 +52,17 @@ topics:
   core_compatibility:
     min: 0.0.1
 - code: moto3
-  name: Moto3
-  description: FIM Moto3 World Championship is the lightweight class of the Fédération
-    Internationale de Motocyclisme (FIM) Road Racing World Championship.
+  name: Formula One
+  description: 'Formula One (F1) is the highest class of worldwide racing for open-wheel
+    single-seater formula racing cars sanctioned by the Fédération Internationale
+    de l''Automobile (FIA).
+
+    Grands Prix take place in multiple countries and continents on either purpose-built
+    circuits or closed roads.'
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3/v1/topic.v1.yaml
-    topic_sha256: 2631c4169bda184b2578d397d33075781cd7dcc5331048fa729b6f9c5e8d955d
+    topic_sha256: 9753b13c8963112e25b5f462cef11bb0784a0fbdec1499493456a1886e4d5291
   core_compatibility:
     min: 0.0.1
 - code: motoe
