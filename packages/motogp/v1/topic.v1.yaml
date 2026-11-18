@@ -106,31 +106,45 @@ watch_directory_acquisition:
         - 03fp2
         - 04q1
         - 05q2
+        - 06s
+        - 07wu
+        - 08r
     priority: 10
     relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
-  - id: motomundo-watch-q-broadcast
-    applies_to:
-      event_codes:
-        - 04q1
-        - 05q2
-    priority: 11
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.QUALY(?:-(?:TNT|DAZN|VDPass))?\.(?:mp4|mkv)$'
-  - id: motomundo-watch-06s
-    applies_to:
-      event_codes:
-        - 06s
-    priority: 10
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.SPRINT(?:-(?:Dorna|VDPass|TNT|DAZN))?\.(?:mp4|mkv)$'
   - id: motomundo-watch-07wu
     applies_to:
       event_codes:
         - 07wu
     priority: 10
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.(?:WARMUP|WUP)(?:-(?:Dorna|VDPass))?\.(?:mp4|mkv)$'
-  - id: motomundo-watch-08r
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.WarmUp\.(?:mp4|mkv)$'
+  - id: motomundo-watch-dorna-vdpass
     applies_to:
       event_codes:
+        - 06s
         - 08r
     priority: 10
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.RACE(?:-(?:Dorna|VDPass|TNT|DAZN))?\.(?:mp4|mkv)$'
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}(?:-(?:Dorna|VDPass))?\.(?:mp4|mkv)$'
+  - id: motomundo-watch-dazn-provisional
+    applies_to:
+      event_codes:
+        - 04q1
+        - 05q2
+        - 06s
+        - 08r
+    priority: 60
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}-(?:DAZN|Provisional)\.(?:mp4|mkv)$'
+  - id: motomundo-watch-espn-brasil
+    applies_to:
+      event_codes:
+        - 06r
+        - 08r
+    priority: 80
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}-ESPN_Brasil\.(?:mp4|mkv)$'
+  - id: motomundo-watch-tnt
+    applies_to:
+      event_codes:
+        - 06r
+        - 08r
+    priority: 90
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}-TNT\.(?:mp4|mkv)$'
 ...
