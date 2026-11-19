@@ -48,7 +48,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto2/v1/topic.v1.yaml
-    topic_sha256: 40aae3dd883cbe99e364d230c9fa8522e7979900fd509e8331cffddad28871cb
+    topic_sha256: 24d68a29c96201915d1c48de34c3865cd06e07e7c011802772600d4a9af1fc4a
   core_compatibility:
     min: 0.0.1
 - code: moto3
@@ -58,7 +58,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/moto3/v1/topic.v1.yaml
-    topic_sha256: 2631c4169bda184b2578d397d33075781cd7dcc5331048fa729b6f9c5e8d955d
+    topic_sha256: bf47abbed38697bf7c6b470bdfcc0f3a9ea43a4a8542192d67697c38e93204dc
   core_compatibility:
     min: 0.0.1
 - code: motoe
@@ -82,7 +82,7 @@ topics:
   package:
     version: 0.1.0
     url: https://raw.githubusercontent.com/dspagnol/motorr-library-test1/main/packages/motogp/v1/topic.v1.yaml
-    topic_sha256: e37289a7839068bccd3936e8061a198a11c211eb80923b7bdf7df96e98dc91b3
+    topic_sha256: 7ba7045c58ef329010128cec3000fb2e8acfa955afb7ee42fd6b5ffc567c126b
   core_compatibility:
     min: 0.0.1
 - code: ufc

@@ -106,9 +106,7 @@ watch_directory_acquisition:
         - 03fp2
         - 04q1
         - 05q2
-        - 06s
         - 07wu
-        - 08r
     priority: 10
     relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
   - id: motomundo-watch-07wu
@@ -136,14 +134,14 @@ watch_directory_acquisition:
   - id: motomundo-watch-espn-brasil
     applies_to:
       event_codes:
-        - 06r
+        - 06s
         - 08r
     priority: 80
     relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}-ESPN_Brasil\.(?:mp4|mkv)$'
   - id: motomundo-watch-tnt
     applies_to:
       event_codes:
-        - 06r
+        - 06s
         - 08r
     priority: 90
     relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.MGP\.[^\.]+\.${var.watch_token}-TNT\.(?:mp4|mkv)$'
