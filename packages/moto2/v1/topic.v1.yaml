@@ -86,13 +86,13 @@ watch_directory_acquisition:
         - 04q1
         - 05q2
     priority: 10
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.[^\.]+\.${var.watch_token}\.(?:mp4|mkv)$'
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.(?:[^\.]+\.)?${var.watch_token}\.(?:mp4|mkv)$'
   - id: motomundo-watch-dorna-vdpass
     applies_to:
       event_codes:
         - 06r
     priority: 10
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.[^\.]+\.${var.watch_token}(?:-(?:Dorna|VDPass))?\.(?:mp4|mkv)$'
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.(?:[^\.]+\.)?${var.watch_token}(?:-(?:Dorna|VDPass))?\.(?:mp4|mkv)$'
   - id: motomundo-watch-dazn-provisional
     applies_to:
       event_codes:
@@ -100,17 +100,17 @@ watch_directory_acquisition:
         - 05q2
         - 06r
     priority: 60
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.[^\.]+\.${var.watch_token}-(?:DAZN|Provisional)\.(?:mp4|mkv)$'
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.(?:[^\.]+\.)?${var.watch_token}-(?:DAZN|Provisional)\.(?:mp4|mkv)$'
   - id: motomundo-watch-espn-brasil
     applies_to:
       event_codes:
         - 06r
     priority: 80
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.[^\.]+\.${var.watch_token}-ESPN_Brasil\.(?:mp4|mkv)$'
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.(?:[^\.]+\.)?${var.watch_token}-ESPN_Brasil\.(?:mp4|mkv)$'
   - id: motomundo-watch-tnt
     applies_to:
       event_codes:
         - 06r
     priority: 90
-    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.[^\.]+\.${var.watch_token}-TNT\.(?:mp4|mkv)$'
+    relative_path_regex: '[0-9]+\.MotoMundo\.net\.${season.code}\.R${round.code}\.M2\.(?:[^\.]+\.)?${var.watch_token}-TNT\.(?:mp4|mkv)$'
 ...
